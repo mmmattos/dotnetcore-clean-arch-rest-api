@@ -10,8 +10,28 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="MySql.Data.EntityFrameworkCore" />
+    <None Remove="PresentationLayer\" />
+    <None Remove="DomainLayer\" />
+    <None Remove="ApplicationLayer\" />
+    <None Remove="InfrastructureLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PresentationLayer\" />
+    <Folder Include="DomainLayer\" />
+    <Folder Include="ApplicationLayer\" />
+    <Folder Include="InfrastructureLayer\" />
+  </ItemGroup>
 </Project>
